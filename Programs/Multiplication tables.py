@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Divide.py                                          :+:      :+:    :+:    #
+#    Multiplication tables.py                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dbohoyo- <dbohoyo-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -12,16 +12,10 @@
 
 while True:
 	try:
-		print('Enter the dividend and the divisor')
-		dividend = float(input('Dividend: '))
-		divisor = float(input('Divisor: '))
-		result = dividend / divisor
-		print('Result:', result)
-		break
+		n = int(input('Enter the number for which you want to generate the multiplication table (type -1 to exit) -> '))
+		if n == -1:
+			break
+		for i in range(11):
+			print(f'{n} x {i} = {n*i}')
 	except ValueError:
-		print('You must enter a valid number.')
-	except ZeroDivisionError:
-		print('The divisor cannot be zero.')
-	except Exception as e:
-		print(f'An unexpected error occurred: {e}')
-
+		print('Invalid input. Please enter a valid number.')
